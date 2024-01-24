@@ -19,13 +19,32 @@ const Checkout = () => {
     userProgressCtx.hideCheckout();
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const fd = new FormData(event.target);
+    const customerData = Object.fromEntries(fd.entries());
+
+    console.log(customerData);
+    fetch("http://localhost:3000/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        order: {
+          items: cartCtx.items,
+          customer: customerData,
+        },
+      }),
+    });
+  };
+
   return (
     <Modal open={userProgressCtx.progress === "checkout"} onClose={handleClose}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Checkout</h2>
         <p>Total amount: {currencyFormatter.format(totalPrice)}</p>
 
-        <Input label={"Full Name"} id={"full-name"} type="text" />
+        <Input label={"Full Name"} id={"name"} type="text" />
         <Input label={"Email Address"} id={"email"} type="email" />
         <Input label={"Street Address"} id={"street"} type="text" />
         <div className="control-row">
