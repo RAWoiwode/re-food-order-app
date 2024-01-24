@@ -1,17 +1,14 @@
+import { useEffect } from "react";
 import Header from "./components/Header";
 import MealItem from "./components/MealItem";
+import Meals from "./components/Meals";
 
 function App() {
   return (
     <>
       <Header />
-      <main id="meals">
-        <MealItem
-          meal={"Mac and cheese"}
-          price={"$8.99"}
-          description={"Lorem ipsum"}
-        />
-        <MealItem />
+      <main>
+        <Meals />
       </main>
     </>
   );

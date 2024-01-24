@@ -5,10 +5,12 @@ const Header = () => {
   return (
     <header id="main-header">
       <h1 id="title">
-        <img src={logo} alt="Logo" className="" />
+        <img src={logo} alt="Logo" />
         REACTFOOD
       </h1>
-      <button>Cart</button>
+      <nav>
+        <button className="text-button">Cart</button>
+      </nav>
     </header>
   );
 };
