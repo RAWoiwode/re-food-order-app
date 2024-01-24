@@ -1,9 +1,18 @@
+import Header from "./components/Header";
+import MealItem from "./components/MealItem";
+
 function App() {
   return (
     <>
-      <h1>You got this 💪</h1>
-      <p>Stuck? Not sure how to proceed?</p>
-      <p>Don't worry - we've all been there. Let's build it together!</p>
+      <Header />
+      <main id="meals">
+        <MealItem
+          meal={"Mac and cheese"}
+          price={"$8.99"}
+          description={"Lorem ipsum"}
+        />
+        <MealItem />
+      </main>
     </>
   );
 }
