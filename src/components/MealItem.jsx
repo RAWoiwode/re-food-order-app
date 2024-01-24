@@ -1,14 +1,21 @@
 import React from "react";
+import { currencyFormatter } from "../util/formatting";
 
-const MealItem = ({ image, meal, price, description }) => {
+const MealItem = ({ image, name, price, description }) => {
   return (
-    <div className="meal-item">
-      <img src={image} alt="" />
-      <h2>{meal}</h2>
-      <h3 className="meal-item-price">{price}</h3>
-      <p className="meal-item-description">{description}</p>
-      <button className="button meal-item-actions">Add to cart</button>
-    </div>
+    <li className="meal-item">
+      <article>
+        <img src={`http://localhost:3000/${image}`} alt={name} />
+        <div>
+          <h3>{name}</h3>
+          <p className="meal-item-price">{currencyFormatter.format(price)}</p>
+          <p className="meal-item-description">{description}</p>
+        </div>
+        <p className="meal-item-actions">
+          <button className="button">Add to cart</button>
+        </p>
+      </article>
+    </li>
   );
 };
 
