@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
-import MealItem from "./MealItem";
+import React from "react";
 import { useHttp } from "../hooks/useHttp";
 import Error from "./Error";
+import MealItem from "./MealItem";
 
 const requestConfig = {};
 
