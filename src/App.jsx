@@ -1,16 +1,15 @@
-import { useEffect } from "react";
 import Header from "./components/Header";
-import MealItem from "./components/MealItem";
 import Meals from "./components/Meals";
+import { CartContextProvider } from "./store/CartContext";
 
 function App() {
   return (
-    <>
+    <CartContextProvider>
       <Header />
       <main>
         <Meals />
       </main>
-    </>
+    </CartContextProvider>
   );
 }
 
